@@ -1,27 +1,3 @@
-<?php
-
-$namaTamu = "Tamu Undangan";
-
-$id = $_GET['id'] ?? '';
-
-if (($handle = fopen("Tamu.csv", "r")) !== FALSE) {
-
-    fgetcsv($handle);
-
-    while (($data = fgetcsv($handle)) !== FALSE) {
-
-        if ($data[0] == $id) {
-
-            $namaTamu = $data[1];
-
-            break;
-
-        }
-    }
-
-    fclose($handle);
-}
-?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -1450,13 +1426,9 @@ if (($handle = fopen("Tamu.csv", "r")) !== FALSE) {
 
 /* ===== REFERENCE BLUE BACKGROUND THEME ===== */
 :root {
-  --navy: #86a9c7;
-  --navy2: #718aa7;
-  --gold: #ffffff;
-  --gold2: #ffffff;
-  --gold3: #eef6fb;
-  --cream: #ffffff;
-  --white: #ffffff;
+  --gold: #cfa825;
+  --gold2: #cfa825;
+  --gold3: #cfa825;
 }
 
 html,
@@ -1476,10 +1448,7 @@ body,
   background-color: #a8d0e8 !important;
 }
 
-#s1::before {
-  background: rgba(104, 136, 160, 0.78);
-}
-
+#s1::before,
 #s2::before,
 #s3::before,
 #s4::before,
@@ -1487,9 +1456,8 @@ body,
 #s6::before,
 #s7::before,
 #s8::before {
-  background: rgba(104, 136, 160, 0.80);
+    display: none !important;
 }
-
 .avatar-circle,
 .gallery-item {
   background-color: rgba(96, 120, 152, 0.42);
@@ -1844,7 +1812,7 @@ body,
     <div class="slide-inner" style="gap:14px">
       <p class="label fade-in">Tanda Kasih</p>
       <div class="divider fade-in"><hr><div class="diamond"></div><div class="ornament">✦</div><div class="diamond"></div><hr></div>
-      <p class="serif fade-in" style="font-size:13px; color:rgba(255,255,255,.55); max-width:280px; line-height:1.8; font-style:italic">
+      <p class="serif fade-in" style="font-size:13px; color:#cfa825; max-width:280px; line-height:1.8; font-style:italic">
         Bagi Bapak/Ibu/Saudara/i yang tidak dapat hadir, doa dan perhatian Anda adalah hadiah terindah bagi kami.
       </p>
 
