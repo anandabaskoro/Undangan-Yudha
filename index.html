@@ -170,88 +170,126 @@
     color: var(--gold);
   }
 
-  /* ───── SLIDE 1 — OPENING ───── */
-  .slide{
+ /* ───── SLIDE 1 — OPENING ───── */
+
+.slide{
     background:url('images/cover_preview.jpg')
     center center / cover no-repeat;
 }
-  #s1::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 80px; right: 80px; bottom: 0;
-    background: rgba(14, 27, 61, 0.4);
-    pointer-events: none;
-    z-index: 0;
-  }
-  #s1 .guest-label {
-    color: var(--gold2);
-    font-size: 13px;
-    letter-spacing: 2px;
-    position: relative;
-    z-index: 2;
-    font-weight: 400;
-  }
-  .slide-inner{
+
+.slide-inner{
     width:100%;
     max-width:1100px;
     margin:0 auto;
+
     text-align:center;
+
     display:flex;
     flex-direction:column;
     align-items:center;
-    position: relative;
-    z-index: 2;
+
+    position:relative;
+    z-index:2;
+
+    /* NAIKKAN SEMUA ISI COVER */
+    transform:translateY(-100px);
 }
-  #s1 .guest-name {
-    color: var(--gold2);
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 24px;
-    font-weight: 400;
-    position: relative;
-    z-index: 2;
-  }
-  #s1 .bird-icon {
-    font-size: 60px;
-    color: var(--gold2);
-    margin-bottom: 10px;
-    position: relative;
-    z-index: 2;
-  }
-  #s1 .names-script {
-    font-size: clamp(52px, 14vw, 80px);
-    line-height: 1.05;
-    text-align: center;
-    color: var(--gold2);
-    position: relative;
-    z-index: 2;
-  }
-  #s1 .and-text {
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 300;
-    font-size: 13px;
-    letter-spacing: 4px;
-    color: var(--gold);
-    margin: -4px 0;
-    position: relative;
-    z-index: 2;
-  }
-  #s1 .open-btn {
-    margin-top: 28px;
-    padding: 12px 36px;
-    border: 1.5px solid var(--gold);
-    background: rgba(255,255,255,0.1);
-    color: var(--gold2);
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all .3s;
-    position: relative;
-    z-index: 2;
-    font-weight: 500;
-  }
-  #s1 .open-btn:hover { background: rgba(255,255,255,.15); }
+
+#s1 .bird-icon{
+    font-size:90px;   /* sebelumnya 60px */
+    color:var(--gold2);
+    margin-bottom:20px;
+    position:relative;
+    z-index:2;
+}
+
+#s1 .guest-label{
+    color:var(--gold2);
+
+    font-size:20px;   /* sebelumnya 13px */
+
+    letter-spacing:4px;
+
+    position:relative;
+    z-index:2;
+
+    font-weight:500;
+
+    margin-bottom:10px;
+}
+
+#s1 .names-script{
+    font-size:clamp(80px,18vw,130px);
+
+    line-height:0.95;
+
+    text-align:center;
+
+    color:var(--gold2);
+
+    position:relative;
+    z-index:2;
+
+    text-shadow:
+      0 0 10px rgba(212,175,55,.25);
+}
+
+#s1 .and-text{
+    font-family:'Josefin Sans',sans-serif;
+
+    font-weight:400;
+
+    font-size:18px;
+
+    letter-spacing:6px;
+
+    color:var(--gold);
+
+    margin:0;
+
+    position:relative;
+    z-index:2;
+}
+
+#s1 .guest-name{
+    color:var(--gold2);
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:42px; /* sebelumnya 32px */
+
+    font-weight:500;
+
+    position:relative;
+    z-index:2;
+
+    margin-top:15px;
+}
+
+#s1 .open-btn{
+    margin-top:35px;
+
+    padding:16px 50px;
+
+    border:2px solid var(--gold);
+
+    background:rgba(255,255,255,.08);
+
+    color:var(--gold2);
+
+    font-family:'Josefin Sans',sans-serif;
+
+    font-size:15px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    cursor:pointer;
+
+    position:relative;
+    z-index:2;
+}
 
   /* ───── BACKGROUND FOR ALL SLIDES ───── */
  
@@ -1627,6 +1665,9 @@ body,
         <p class="guest-label">Bapak / Ibu / Saudara/i</p>
         <p class="guest-name" style="margin-top:6px"> <?= htmlspecialchars($namaTamu) ?></p>
       </div>
+     <p class="guest-name" id="guestName">
+    Ditempat
+</p>
 
       <button class="open-btn fade-in"
       onclick="goSlide(1); document.getElementById('bgMusic').play()">
